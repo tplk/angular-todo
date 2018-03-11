@@ -46,15 +46,16 @@
       "project": "src/tsconfig.app.json",
       "exclude": [
         "**/node_modules/**",
-        "**/*.spec.ts",
         "**/*.d.ts",
-        "test.ts",
-        "polyfills.ts"
+        "**/polyfills.ts"
       ]
     },
     {
       "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**"
+      "exclude": [
+        "**/node_modules/**",
+        "**/test.ts"
+      ]
     },
     {
       "project": "e2e/tsconfig.e2e.json",
