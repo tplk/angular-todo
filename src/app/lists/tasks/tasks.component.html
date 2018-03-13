@@ -1,0 +1,34 @@
+<h2>Tasks</h2>
+<ul class="list">
+  <li
+    class="list-item--tasks"
+    *ngFor="let task of (tasks | async)"
+  >
+    <a
+      class="task"
+      [class.task--done]="task.isDone"
+      [title]="task.isDone ? 'unmark as done' : 'mark as done'"
+      (click)="toggleTaskStatus(task);"
+    >
+      {{ task.name }}
+    </a>
+    <button
+      class="btn-delete"
+      (click)="deleteTask(task)"
+    >
+      X
+    </button>
+  </li>
+</ul>
+<form
+  class="form"
+  [formGroup]="form"
+  (submit)="onSubmit()"
+>
+  <input
+    type="text"
+    title="task name"
+    placeholder="Add TODO..."
+    formControlName="name"
+  >
+</form>

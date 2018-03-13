@@ -1,0 +1,68 @@
+@import 'variables';
+@import 'colors';
+@import 'mixins';
+
+:host {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  max-width: $width-mobile;
+  min-width: 0;
+  padding: 2em;
+
+  @media (max-width: $width-mobile) {
+    flex-direction: column;
+    padding: 1em 0.5em;
+    align-items: center;
+  }
+}
+
+.card-wrapper {
+  display: flex;
+  width: 50%;
+  padding-right: 2em;
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+
+  @media (max-width: $width-mobile) {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+
+    &:last-of-type {
+      padding-right: 1em;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.card {
+  @include material-border;
+  flex: 1 1 auto;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  overflow-wrap: break-word;
+  text-decoration: none;
+  color: $c-text;
+
+  &--active {
+    text-decoration: underline;
+  }
+}
+
+.form {
+  @include form;
+  margin-top: auto;
+}

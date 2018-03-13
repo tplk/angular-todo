@@ -1,0 +1,13 @@
+@import 'colors';
+@import 'variables';
+
+:host {
+  display: block;
+  padding: 2em;
+  background-color: $c-bg-accent;
+
+  @media (max-width: $width-mobile) {
+    padding: 0.5em;
+    text-align: center;
+  }
+}

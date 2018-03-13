@@ -1,0 +1,14 @@
+@import 'colors';
+@import 'variables';
+
+:host {
+  display: block;
+  padding: 1em 2em;
+  background-color: $c-bg-secondary;
+  color: $c-text-secondary;
+
+  @media (max-width: $width-mobile) {
+    padding: 0.5em;
+    text-align: center;
+  }
+}

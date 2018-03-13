@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css/normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+@import './styles/list';
+@import './styles/shared/variables';
+@import './styles/shared/colors';
+
+html {
+  line-height: normal;
+}
+
+body {
+  font: $font-size 'Roboto Mono', sans-serif;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: $min-width;
+  background-color: $c-bg;
+  color: $c-text;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}

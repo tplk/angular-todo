@@ -1,0 +1,42 @@
+<div class="card-wrapper">
+  <div class="card">
+    <h2>Lists</h2>
+    <ul class="list">
+      <li *ngFor="let list of (lists$ | async); trackBy: trackByFunc;">
+        <a
+          class="link"
+          [routerLink]="['./', list.id]"
+          routerLinkActive="link--active"
+        >
+          {{ list.name }}
+          ({{list.tasksCountTodo}}/{{list.tasksCountTotal}})
+        </a>
+      </li>
+    </ul>
+    <form
+      class="form"
+      [formGroup]="form"
+      (submit)="onSubmit()"
+    >
+      <input
+        #nameInput
+        type="text"
+        title="list name"
+        placeholder="New list..."
+        formControlName="name"
+      >
+      <button
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        create
+      </button>
+    </form>
+  </div>
+</div>
+<div class="card-wrapper">
+  <div class="card">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

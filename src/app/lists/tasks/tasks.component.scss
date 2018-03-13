@@ -1,0 +1,40 @@
+@import 'mixins';
+
+:host {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item--tasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task {
+  overflow-wrap: break-word;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &--done {
+    text-decoration: line-through;
+
+    &:hover {
+      text-decoration: line-through underline;
+    }
+  }
+}
+
+.btn-delete {
+  @include btn;
+  background-color: $c-danger;
+}
+
+.form {
+  @include form;
+  margin-top: auto;
+}

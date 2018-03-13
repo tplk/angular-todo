@@ -1,1 +1,17 @@
-/* app component styles */
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
+
+.header,
+.footer {
+  flex: none;
+}
+
+.main {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+}
