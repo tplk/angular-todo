@@ -6,7 +6,7 @@ import { Task } from 'app/shared/models/task.model';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { combineLatest, map, switchMap } from 'rxjs/operators';
-import * as data from './initial-state.json';
+import { data } from './initial-state';
 
 @Injectable()
 export class StateService {
