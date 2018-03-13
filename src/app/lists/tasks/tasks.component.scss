@@ -32,6 +32,9 @@
 .btn-delete {
   @include btn;
   background-color: $c-danger;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
 }
 
 .form {

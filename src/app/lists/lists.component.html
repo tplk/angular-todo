@@ -34,7 +34,10 @@
     </form>
   </div>
 </div>
-<div class="card-wrapper">
+<div
+  class="card-wrapper"
+  [class.d-none]="(isTasksCardHidden | async)"
+>
   <div class="card">
     <router-outlet></router-outlet>
   </div>

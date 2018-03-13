@@ -7,6 +7,7 @@ import { trackById } from 'app/shared/helpers/track-by-id';
 import { ListWithCount } from 'app/shared/models/list-with-count';
 import { nameValidators } from 'app/shared/validators/name.validator';
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'atd-lists',
@@ -17,6 +18,7 @@ import { Observable } from 'rxjs/Observable';
 export class ListsComponent {
   public trackByFunc = trackById;
 
+  public isTasksCardHidden: Observable<boolean>;
   public lists$: Observable<ListWithCount[]>;
   public form: FormGroup;
 
@@ -24,6 +26,8 @@ export class ListsComponent {
               private fb: FormBuilder,
               private router: Router) {
     this.createForm();
+    this.isTasksCardHidden = this.state.activeListId$
+      .pipe(map((v) => v === null));
     this.lists$ = state.getListsWithCount();
   }
 
