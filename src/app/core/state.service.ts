@@ -23,8 +23,6 @@ export class StateService {
       (data as any).tasks
         .map((v) => populateModel<Task>((new Task()), v)),
     );
-    console.log(this._lists$);
-    console.log(this._tasks$);
   }
 
   public get lists$(): Observable<List[]> {
