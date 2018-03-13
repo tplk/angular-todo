@@ -1,4 +1,30 @@
 <h2>Tasks</h2>
+
+<form class="form">
+  <input
+    type="text"
+    placeholder="Search..."
+    [formControl]="searchFilter"
+  >
+  <label>
+    <input
+      type="radio"
+      name="undoneFilter"
+      [formControl]="undoneFilter"
+      [value]="false"
+    >
+    All
+  </label>
+  <label>
+    <input
+      type="radio"
+      name="undoneFilter"
+      [formControl]="undoneFilter"
+      [value]="true"
+    >
+    Undone
+  </label>
+</form>
 <ul class="list">
   <li
     class="list-item--tasks"
