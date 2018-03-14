@@ -13,8 +13,10 @@
 }
 
 .task {
-  overflow-wrap: break-word;
+  overflow: hidden;
   cursor: pointer;
+  min-width: 0;
+  word-wrap: break-word;
 
   &:hover {
     text-decoration: underline;
@@ -35,6 +37,8 @@
   border-radius: 50%;
   width: 2em;
   height: 2em;
+  flex-shrink: 0;
+  margin-left: 10px;
 }
 
 .form {
